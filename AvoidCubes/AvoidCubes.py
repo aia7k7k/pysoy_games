@@ -15,21 +15,25 @@ room1['light'] = soy.bodies.Light(soy.atoms.Position((-2, 3, 5)))
 client = soy.Client()
 client.window.append(soy.widgets.Projector(room1['cam']))
 
-#-----GameObject Setup-----
-blue = soy.materials.Colored('blue')
-gold = soy.materials.Colored('gold')
-red = soy.materials.Colored('red')
+#Texture Import
+wood = soy.textures.Texture('./images/wood.jpg')
+brick = soy.textures.Texture('./images/brick.jpeg')
+concrete = soy.textures.Texture('./images/concrete.jpeg')
 
-room1['cube1'] = soy.bodies.Box(soy.atoms.Position((-1, 1, -1)), material=blue)
+#Cube Setup
+room1['cube1'] = soy.bodies.Box(soy.atoms.Position((-1, 1, -1)))
 room1['cube1'].radius = 0.1
+room1['cube1'].material = soy.materials.Textured(colormap = wood)
 room1['cube1'].addForce(0, 160, 160)
 
-room1['cube2'] = soy.bodies.Box(soy.atoms.Position((1, -1, 1)), material=gold)
+room1['cube2'] = soy.bodies.Box(soy.atoms.Position((1, -1, 1)))
 room1['cube2'].radius = 0.1
+room1['cube2'].material = soy.materials.Textured(colormap = brick)
 room1['cube2'].addForce(160, 0, 160)
 
-room1['cube3'] = soy.bodies.Box(soy.atoms.Position((-1, 1, 1)), material=red)
+room1['cube3'] = soy.bodies.Box(soy.atoms.Position((-1, 1, 1)))
 room1['cube3'].radius = 0.1
+room1['cube3'].material = soy.materials.Textured(colormap = concrete)
 room1['cube3'].addForce(160, 160, 0)
 
 #-----Movement Section -----
