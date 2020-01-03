@@ -1,4 +1,4 @@
-###### Process
+### Process
 
 I thought the easiest way to visualize the buoyancy field was to overlap a body onto the entire field.
 However, I couldn't do it because the body would then interact with the floating objects, and move itself away. 
